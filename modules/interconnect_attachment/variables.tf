@@ -133,3 +133,9 @@ variable "peer" {
   })
   default = null
 }
+
+variable "enable_ipv4" {
+  description = "Enable IPv4 BGP sessions on the BGP peer. Can be enabled even if the BGP peer is an IPv6 peer. This will cause metadata to be advertised on the IPv4 session. Must be false if the BGP peer has an IPv6 GUA address."
+  type        = bool
+  default     = true
+}
