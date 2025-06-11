@@ -34,6 +34,7 @@ resource "google_compute_router_peer" "peers" {
   project                   = google_compute_router_interface.interface.project
   router                    = google_compute_router_interface.interface.router
   region                    = google_compute_router_interface.interface.region
+  enable_ipv4               = true
   interface                 = google_compute_router_interface.interface.name
   peer_ip_address           = each.value.peer_ip_address
   peer_asn                  = each.value.peer_asn
